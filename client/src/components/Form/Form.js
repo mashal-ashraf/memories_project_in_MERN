@@ -11,10 +11,10 @@ const Form = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
-    const handleSubmit = () => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        dispatch(creatPost(postData));
+        dispatch(createPost(postData));
 
     }
     const clear = () => {
