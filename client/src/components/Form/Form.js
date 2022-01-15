@@ -11,7 +11,7 @@ const Form = () => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e) => { 
         e.preventDefault();
 
         dispatch(createPost(postData));
@@ -24,7 +24,7 @@ const Form = () => {
         <Paper className={classes.paper}>
             <form autoComplete="off" noValidate className={`${classes.root} $ {classes.form}`} onSubmit={handleSubmit}>
             <Typography variant="h6">Creating a Memory</Typography>
-            <TextField name="creator" variant="outlined" label="Creator" fulWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })} />
+            <TextField name="creator" variant="outlined" label="Creator" fullWidth value={postData.creator} onChange={(e) => setPostData({ ...postData, creator: e.target.value })} />
             <TextField name="title" variant="outlined" label="Title" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
             <TextField name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
             <TextField name="tags" variant="outlined" label="Tags (coma separated)" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })} />
